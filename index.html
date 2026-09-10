@@ -171,6 +171,20 @@
   }
   .mobile-nav .btn{ margin-top: 20px; width:100%; }
 
+  /* ---------- Language toggle pill ---------- */
+  .lang-pill{
+    display:inline-flex; align-items:center; gap:6px;
+    padding: 6px 12px; border-radius: 30px;
+    border: 1px solid var(--line); background: transparent;
+    font-family: var(--font-body); font-size:0.82rem; font-weight:600;
+    color: var(--ink-soft); cursor:pointer;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .lang-pill:hover{ border-color: var(--red); color: var(--ink); }
+  .lang-pill .flag-icon{ width:16px; height:12px; border-radius:2px; flex-shrink:0; display:block; overflow:hidden; }
+  .desktop-nav .lang-pill{ margin-left: 4px; }
+  .lang-pill-mobile{ align-self:flex-start; margin-top: 18px; }
+
   @media (min-width: 1040px){
     .desktop-nav{ display:block; }
     .hamburger{ display:none; }
@@ -408,13 +422,14 @@
         <span class="brand-word">Instal·lacions Montgrí</span>
       </a>
 
-      <nav class="desktop-nav" aria-label="Navegación principal">
+      <nav class="desktop-nav" aria-label="Navegación principal" data-i18n-attr="aria-label:aria.navPrincipal">
         <ul>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#por-que">Por qué elegirnos</a></li>
-          <li><a href="#zona">Zona de cobertura</a></li>
-          <li><a href="#opiniones">Opiniones</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+          <li><a href="#por-que" data-i18n="nav.porque">Por qué elegirnos</a></li>
+          <li><a href="#zona" data-i18n="nav.zona">Zona de cobertura</a></li>
+          <li><a href="#opiniones" data-i18n="nav.opiniones">Opiniones</a></li>
+          <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+          <li><button type="button" class="lang-pill" id="lang-toggle-desktop" aria-label="Canviar idioma / Cambiar idioma"></button></li>
         </ul>
       </nav>
     </div>
@@ -425,22 +440,23 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
         607 33 32 13
       </a>
-      <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+      <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú" data-i18n-attr="aria-label:aria.abrirMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
 
-<nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil">
+<nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" data-i18n-attr="aria-label:aria.navMobil">
   <div class="mobile-nav-inner">
-    <a href="#servicios">Servicios</a>
-    <a href="#por-que">Por qué elegirnos</a>
-    <a href="#proceso">Cómo trabajamos</a>
-    <a href="#zona">Zona de cobertura</a>
-    <a href="#opiniones">Opiniones</a>
-    <a href="#contacto">Contacto</a>
-    <a class="btn btn-primary" href="tel:+34607333213">Llamar · 607 33 32 13</a>
+    <a href="#servicios" data-i18n="nav.servicios">Servicios</a>
+    <a href="#por-que" data-i18n="nav.porque">Por qué elegirnos</a>
+    <a href="#proceso" data-i18n="nav.proceso">Cómo trabajamos</a>
+    <a href="#zona" data-i18n="nav.zona">Zona de cobertura</a>
+    <a href="#opiniones" data-i18n="nav.opiniones">Opiniones</a>
+    <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+    <a class="btn btn-primary" href="tel:+34607333213" data-i18n="mobile.llamar">Llamar · 607 33 32 13</a>
+    <button type="button" class="lang-pill lang-pill-mobile" id="lang-toggle-mobile" aria-label="Canviar idioma / Cambiar idioma"></button>
   </div>
 </nav>
 
@@ -453,10 +469,10 @@
         <div class="hero-panel-inner">
           <span class="hero-eyebrow-badge">
             <span class="eyebrow-dash" aria-hidden="true"></span>
-            25 años · L'Estartit, Costa Brava
+            <span data-i18n="hero.eyebrow">25 años · L'Estartit, Costa Brava</span>
           </span>
-          <h1>Instal·lacions Montgrí, 25 años a tu servicio.</h1>
-          <p class="lead">Fontanería, electricidad, climatización y gas para viviendas y negocios de L'Estartit, Torroella de Montgrí y todo el Baix Empordà.</p>
+          <h1 data-i18n="hero.h1">Instal·lacions Montgrí, 25 años a tu servicio.</h1>
+          <p class="lead" data-i18n="hero.lead">Fontanería, electricidad, climatización y gas para viviendas y negocios de L'Estartit, Torroella de Montgrí y Pals.</p>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="tel:+34607333213">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
@@ -468,15 +484,15 @@
           <div class="hero-badges">
             <div class="hero-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <div><strong>Urgencias 24h</strong><span>Todo el año, también en temporada alta</span></div>
+              <div><strong data-i18n="hero.badge1.title">Urgencias 24h</strong><span data-i18n="hero.badge1.desc">Todo el año, también en temporada alta</span></div>
             </div>
             <div class="hero-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z"/><circle cx="12" cy="11" r="2.4"/></svg>
-              <div><strong>Torroella de Montgrí - L'Estartit</strong></div>
+              <div><strong data-i18n="hero.badge2.title">Torroella de Montgrí - L'Estartit</strong></div>
             </div>
             <div class="hero-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
-              <div><strong>Trabajo garantizado</strong><span>Materiales de calidad y seguimiento</span></div>
+              <div><strong data-i18n="hero.badge3.title">Trabajo garantizado</strong><span data-i18n="hero.badge3.desc">Materiales de calidad y seguimiento</span></div>
             </div>
           </div>
         </div>
@@ -496,41 +512,41 @@
   <section class="bg-white" id="servicios">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-tag">Servicios</span>
-        <h2>Todo lo que necesita tu instalación, en un mismo equipo</h2>
-        <p>Trabajamos tanto en averías puntuales como en proyectos completos, en primeras y segundas residencias, comunidades y locales comerciales.</p>
+        <span class="section-tag" data-i18n="services.tag">Servicios</span>
+        <h2 data-i18n="services.h2">Todo lo que necesita tu instalación, en un mismo equipo</h2>
+        <p data-i18n="services.p">Trabajamos tanto en averías puntuales como en proyectos completos, en primeras y segundas residencias, comunidades y locales comerciales.</p>
       </div>
 
       <div class="services-grid">
         <article class="service-card reveal">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Fontanería</h3>
-          <p>Reparación de fugas, grifería, tuberías, desatascos y mantenimiento de redes de agua.</p>
+          <h3 data-i18n="service1.title">Fontanería</h3>
+          <p data-i18n="service1.desc">Reparación de fugas, grifería, tuberías, desatascos y mantenimiento de redes de agua.</p>
         </article>
         <article class="service-card reveal">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z"/></svg></div>
-          <h3>Electricidad</h3>
-          <p>Instalaciones y cuadros eléctricos, iluminación, averías y boletines eléctricos oficiales.</p>
+          <h3 data-i18n="service2.title">Electricidad</h3>
+          <p data-i18n="service2.desc">Instalaciones y cuadros eléctricos, iluminación, averías y boletines eléctricos oficiales.</p>
         </article>
         <article class="service-card reveal">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
-          <h3>Climatización y calefacción</h3>
-          <p>Instalación y mantenimiento de aire acondicionado, calderas y sistemas de calefacción.</p>
+          <h3 data-i18n="service3.title">Climatización y calefacción</h3>
+          <p data-i18n="service3.desc">Instalación y mantenimiento de aire acondicionado, calderas y sistemas de calefacción.</p>
         </article>
         <article class="service-card reveal">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c2 3-1 4-1 7a3 3 0 0 0 6 0c0-1-.4-2-1-3 1.5 1 3 3 3 6a7 7 0 1 1-14 0c0-4 3-6 4-7 1-1 2-2 3-3Z"/></svg></div>
-          <h3>Instalaciones de gas</h3>
-          <p>Instalación, revisión y certificado reglamentario de instalaciones de gas natural y butano.</p>
+          <h3 data-i18n="service4.title">Instalaciones de gas</h3>
+          <p data-i18n="service4.desc">Instalación, revisión y certificado reglamentario de instalaciones de gas natural y butano.</p>
         </article>
         <article class="service-card reveal">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
-          <h3>Reformas de baños y cocinas</h3>
-          <p>Reformas integrales adaptadas a segundas residencias y apartamentos de la costa.</p>
+          <h3 data-i18n="service5.title">Reformas de baños y cocinas</h3>
+          <p data-i18n="service5.desc">Reformas integrales adaptadas a segundas residencias y apartamentos de la costa.</p>
         </article>
         <article class="service-card reveal">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></div>
-          <h3>Urgencias 24 horas</h3>
-          <p>Atención rápida ante averías urgentes, cualquier día del año, en toda la zona de cobertura.</p>
+          <h3 data-i18n="service6.title">Urgencias 24 horas</h3>
+          <p data-i18n="service6.desc">Atención rápida ante averías urgentes, cualquier día del año, en toda la zona de cobertura.</p>
         </article>
       </div>
     </div>
@@ -540,26 +556,26 @@
   <section class="bg-stone" id="por-que">
     <div class="container why-grid">
       <div class="reveal">
-        <span class="section-tag">Por qué elegirnos</span>
-        <h2>Conocemos cada rincón de la costa, y cada instalación es distinta</h2>
-        <p>Llevamos años trabajando en la zona: sabemos qué exigen las viviendas frente al mar, las comunidades de vecinos y los negocios de temporada.</p>
+        <span class="section-tag" data-i18n="why.tag">Por qué elegirnos</span>
+        <h2 data-i18n="why.h2">Conocemos cada rincón de la costa, y cada instalación es distinta</h2>
+        <p data-i18n="why.p">Llevamos años trabajando en la zona: sabemos qué exigen las viviendas frente al mar, las comunidades de vecinos y los negocios de temporada.</p>
 
         <div class="why-list" style="margin-top:28px;">
           <div class="why-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z"/><circle cx="12" cy="11" r="2.4"/></svg>
-            <div><h3>Conocemos la costa</h3><p>Años de experiencia en segundas residencias, apartamentos turísticos y viviendas de la zona.</p></div>
+            <div><h3 data-i18n="why1.title">Conocemos la costa</h3><p data-i18n="why1.desc">Años de experiencia en segundas residencias, apartamentos turísticos y viviendas de la zona.</p></div>
           </div>
           <div class="why-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
-            <div><h3>Trato claro y directo</h3><p>Te explicamos el trabajo con detalle y sin tecnicismos innecesarios, de principio a fin.</p></div>
+            <div><h3 data-i18n="why2.title">Trato claro y directo</h3><p data-i18n="why2.desc">Te explicamos el trabajo con detalle y sin tecnicismos innecesarios, de principio a fin.</p></div>
           </div>
           <div class="why-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/></svg>
-            <div><h3>Profesionales autorizados</h3><p>Instaladores cualificados y al día con la normativa vigente en cada sector.</p></div>
+            <div><h3 data-i18n="why3.title">Profesionales autorizados</h3><p data-i18n="why3.desc">Instaladores cualificados y al día con la normativa vigente en cada sector.</p></div>
           </div>
           <div class="why-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
-            <div><h3>Respuesta ágil</h3><p>Entendemos la urgencia de una avería, sobre todo en temporada alta.</p></div>
+            <div><h3 data-i18n="why4.title">Respuesta ágil</h3><p data-i18n="why4.desc">Entendemos la urgencia de una avería, sobre todo en temporada alta.</p></div>
           </div>
         </div>
       </div>
@@ -586,25 +602,25 @@
   <section class="bg-white" id="proceso">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-tag">Cómo trabajamos</span>
-        <h2>Un proceso sencillo, de principio a fin</h2>
+        <span class="section-tag" data-i18n="process.tag">Cómo trabajamos</span>
+        <h2 data-i18n="process.h2">Un proceso sencillo, de principio a fin</h2>
       </div>
       <div class="process-list reveal">
         <div class="process-item">
           <span class="process-num">1</span>
-          <div><h3>Nos cuentas qué necesitas</h3><p>Por teléfono, email o el formulario de contacto.</p></div>
+          <div><h3 data-i18n="process1.title">Nos cuentas qué necesitas</h3><p data-i18n="process1.desc">Por teléfono, email o el formulario de contacto.</p></div>
         </div>
         <div class="process-item">
           <span class="process-num">2</span>
-          <div><h3>Diagnóstico</h3><p>Visita y valoración de la avería o instalación a realizar.</p></div>
+          <div><h3 data-i18n="process2.title">Diagnóstico</h3><p data-i18n="process2.desc">Visita y valoración de la avería o instalación a realizar.</p></div>
         </div>
         <div class="process-item">
           <span class="process-num">3</span>
-          <div><h3>Ejecutamos la instalación</h3><p>Con materiales de calidad y cuidado por el detalle.</p></div>
+          <div><h3 data-i18n="process3.title">Ejecutamos la instalación</h3><p data-i18n="process3.desc">Con materiales de calidad y cuidado por el detalle.</p></div>
         </div>
         <div class="process-item">
           <span class="process-num">4</span>
-          <div><h3>Garantía y seguimiento</h3><p>Respondemos por el trabajo realizado una vez finalizado.</p></div>
+          <div><h3 data-i18n="process4.title">Garantía y seguimiento</h3><p data-i18n="process4.desc">Respondemos por el trabajo realizado una vez finalizado.</p></div>
         </div>
       </div>
     </div>
@@ -614,16 +630,13 @@
   <section class="bg-stone" id="zona">
     <div class="container">
       <div class="section-head reveal" style="margin-left:auto; margin-right:auto; text-align:center;">
-        <span class="section-tag">Zona de cobertura</span>
-        <h2>Trabajamos en el Baix Empordà</h2>
+        <span class="section-tag" data-i18n="zona.tag">Zona de cobertura</span>
+        <h2 data-i18n="zona.h2">Trabajamos en el Baix Empordà</h2>
       </div>
       <div class="coverage-towns reveal">
         <span class="town-chip">L'Estartit</span>
         <span class="town-chip">Torroella de Montgrí</span>
         <span class="town-chip">Pals</span>
-        <span class="town-chip">Begur</span>
-        <span class="town-chip">Verges</span>
-        <span class="town-chip">Gualta</span>
       </div>
     </div>
   </section>
@@ -632,9 +645,9 @@
   <section class="bg-white" id="opiniones">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-tag">Opiniones</span>
-        <h2>Lo que dicen quienes ya han confiado en nosotros</h2>
-        <p style="font-size:0.85rem;">Textos de ejemplo — a sustituir por opiniones reales de clientes.</p>
+        <span class="section-tag" data-i18n="opiniones.tag">Opiniones</span>
+        <h2 data-i18n="opiniones.h2">Lo que dicen quienes ya han confiado en nosotros</h2>
+        <p style="font-size:0.85rem;" data-i18n="opiniones.p">Textos de ejemplo — a sustituir por opiniones reales de clientes.</p>
       </div>
       <div class="testi-grid">
         <article class="testi-card reveal">
@@ -645,7 +658,7 @@
             <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1L4.6 17.3l1.3-6L1.3 7.2l6.1-.6L10 1Z"/></svg>
             <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1L4.6 17.3l1.3-6L1.3 7.2l6.1-.6L10 1Z"/></svg>
           </div>
-          <p>"Vinieron el mismo día por una fuga y explicaron todo antes de empezar. Muy formales."</p>
+          <p data-i18n="testi1">"Vinieron el mismo día por una fuga y explicaron todo antes de empezar. Muy formales."</p>
           <div class="testi-name">Marta R.</div>
           <div class="testi-loc">L'Estartit</div>
         </article>
@@ -657,7 +670,7 @@
             <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1L4.6 17.3l1.3-6L1.3 7.2l6.1-.6L10 1Z"/></svg>
             <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1L4.6 17.3l1.3-6L1.3 7.2l6.1-.6L10 1Z"/></svg>
           </div>
-          <p>"Nos hicieron el cambio de caldera en el apartamento antes de la temporada. Puntuales y limpios."</p>
+          <p data-i18n="testi2">"Nos hicieron el cambio de caldera en el apartamento antes de la temporada. Puntuales y limpios."</p>
           <div class="testi-name">Jordi P.</div>
           <div class="testi-loc">Torroella de Montgrí</div>
         </article>
@@ -669,7 +682,7 @@
             <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1L4.6 17.3l1.3-6L1.3 7.2l6.1-.6L10 1Z"/></svg>
             <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1L4.6 17.3l1.3-6L1.3 7.2l6.1-.6L10 1Z"/></svg>
           </div>
-          <p>"Nos explicaron todo con claridad desde el principio, sin ninguna sorpresa al final. Repetiremos seguro."</p>
+          <p data-i18n="testi3">"Nos explicaron todo con claridad desde el principio, sin ninguna sorpresa al final. Repetiremos seguro."</p>
           <div class="testi-name">Anna S.</div>
           <div class="testi-loc">Pals</div>
         </article>
@@ -681,75 +694,75 @@
   <section class="bg-stone" id="contacto">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-tag">Contacto</span>
-        <h2>Cuéntanos qué necesitas, te respondemos rápido</h2>
-        <p>Rellena el formulario o escríbenos directamente por email o teléfono.</p>
+        <span class="section-tag" data-i18n="contacto.tag">Contacto</span>
+        <h2 data-i18n="contacto.h2">Cuéntanos qué necesitas, te respondemos rápido</h2>
+        <p data-i18n="contacto.p">Rellena el formulario o escríbenos directamente por email o teléfono.</p>
       </div>
 
       <div class="contact-wrap">
         <div class="contact-info reveal">
           <div class="contact-info-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
-            <div><strong>Email</strong><a href="mailto:imontgri@gmail.com">imontgri@gmail.com</a></div>
+            <div><strong data-i18n="contacto.email.label">Email</strong><a href="mailto:imontgri@gmail.com">imontgri@gmail.com</a></div>
           </div>
           <div class="contact-info-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
-            <div><strong>Teléfono</strong><a href="tel:+34607333213">607 33 32 13</a></div>
+            <div><strong data-i18n="contacto.telefono.label">Teléfono</strong><a href="tel:+34607333213">607 33 32 13</a></div>
           </div>
           <div class="contact-info-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z"/><circle cx="12" cy="11" r="2.4"/></svg>
-            <div><strong>Zona de trabajo</strong><span>L'Estartit y toda la Costa Brava</span></div>
+            <div><strong data-i18n="contacto.zona.label">Zona de trabajo</strong><span>Torroella de Montgrí - L'Estartit - Pals</span></div>
           </div>
           <div class="contact-info-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
-            <div><strong>Horario</strong><span>Lun–Vie 8:00–19:00 · Urgencias 24h</span></div>
+            <div><strong data-i18n="contacto.horario.label">Horario</strong><span data-i18n="contacto.horario.value">Lun–Vie 8:00–19:00 · Urgencias 24h</span></div>
           </div>
         </div>
 
         <form class="contact-form reveal" id="contact-form">
           <div class="form-row two">
             <div class="field">
-              <label for="nombre">Nombre y apellidos</label>
+              <label for="nombre" data-i18n="form.nombre">Nombre y apellidos</label>
               <input type="text" id="nombre" name="nombre" required autocomplete="name">
             </div>
             <div class="field">
-              <label for="telefono">Teléfono</label>
+              <label for="telefono" data-i18n="form.telefono">Teléfono</label>
               <input type="tel" id="telefono" name="telefono" required autocomplete="tel">
             </div>
           </div>
           <div class="form-row">
             <div class="field">
-              <label for="email">Email</label>
+              <label for="email" data-i18n="form.email">Email</label>
               <input type="email" id="email" name="email" required autocomplete="email">
             </div>
           </div>
           <div class="form-row">
             <div class="field">
-              <label for="servicio">Tipo de servicio</label>
+              <label for="servicio" data-i18n="form.servicio">Tipo de servicio</label>
               <select id="servicio" name="servicio">
-                <option>Fontanería</option>
-                <option>Electricidad</option>
-                <option>Climatización y calefacción</option>
-                <option>Gas</option>
-                <option>Reformas</option>
-                <option>Urgencia</option>
-                <option>Otro</option>
+                <option data-i18n="form.opt.fontaneria">Fontanería</option>
+                <option data-i18n="form.opt.electricidad">Electricidad</option>
+                <option data-i18n="form.opt.climatizacion">Climatización y calefacción</option>
+                <option data-i18n="form.opt.gas">Gas</option>
+                <option data-i18n="form.opt.reformas">Reformas</option>
+                <option data-i18n="form.opt.urgencia">Urgencia</option>
+                <option data-i18n="form.opt.otro">Otro</option>
               </select>
             </div>
           </div>
           <div class="form-row">
             <div class="field">
-              <label for="mensaje">Cuéntanos qué necesitas</label>
+              <label for="mensaje" data-i18n="form.mensaje">Cuéntanos qué necesitas</label>
               <textarea id="mensaje" name="mensaje" required></textarea>
             </div>
           </div>
           <label class="field-check">
             <input type="checkbox" required>
-            <span>Acepto que Instal·lacions Montgrí trate mis datos para responder a esta solicitud.</span>
+            <span data-i18n="form.checkbox">Acepto que Instal·lacions Montgrí trate mis datos para responder a esta solicitud.</span>
           </label>
-          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
-          <p class="form-note">También puedes escribirnos directamente a <a href="mailto:imontgri@gmail.com" style="color:var(--red);">imontgri@gmail.com</a>.</p>
-          <div class="form-success" id="form-success">Gracias, hemos recibido tu solicitud. Te responderemos lo antes posible.</div>
+          <button type="submit" class="btn btn-primary" data-i18n="form.submit">Enviar solicitud</button>
+          <p class="form-note"><span data-i18n="form.note">También puedes escribirnos directamente a</span> <a href="mailto:imontgri@gmail.com" style="color:var(--red);">imontgri@gmail.com</a>.</p>
+          <div class="form-success" id="form-success" data-i18n="form.success">Gracias, hemos recibido tu solicitud. Te responderemos lo antes posible.</div>
         </form>
       </div>
     </div>
@@ -764,19 +777,19 @@
         <img class="brand-mark" src="data:image/png;base64,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" alt="Instal·lacions Montgrí">
         <span class="footer-brand-word">Instal·lacions Montgrí</span>
       </a>
-      <p>Fontanería, electricidad, climatización y gas en L'Estartit y toda la Costa Brava.</p>
+      <p data-i18n="footer.tagline">Fontanería, electricidad, climatización y gas en L'Estartit, Torroella de Montgrí y Pals.</p>
     </div>
     <div class="footer-col">
-      <h4>Navegación</h4>
+      <h4 data-i18n="footer.nav.title">Navegación</h4>
       <ul>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#por-que">Por qué elegirnos</a></li>
-        <li><a href="#zona">Zona de cobertura</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+        <li><a href="#por-que" data-i18n="nav.porque">Por qué elegirnos</a></li>
+        <li><a href="#zona" data-i18n="nav.zona">Zona de cobertura</a></li>
+        <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Contacto</h4>
+      <h4 data-i18n="footer.contact.title">Contacto</h4>
       <ul>
         <li><a href="mailto:imontgri@gmail.com">imontgri@gmail.com</a></li>
         <li><span>L'Estartit, Costa Brava</span></li>
@@ -784,19 +797,87 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 Instal·lacions Montgrí. Todos los derechos reservados.</span>
-    <span>Aviso legal · Política de privacidad</span>
+    <span data-i18n="footer.copyright">© 2026 Instal·lacions Montgrí. Todos los derechos reservados.</span>
+    <span data-i18n="footer.legal">Aviso legal · Política de privacidad</span>
   </div>
 </footer>
 
 <script>
+  // ---------- i18n (ES / CA) ----------
+  const I18N = {"es": {"nav.servicios": "Servicios", "nav.porque": "Por qué elegirnos", "nav.zona": "Zona de cobertura", "nav.opiniones": "Opiniones", "nav.contacto": "Contacto", "nav.proceso": "Cómo trabajamos", "aria.abrirMenu": "Abrir menú", "aria.navPrincipal": "Navegación principal", "aria.navMobil": "Navegación móvil", "mobile.llamar": "Llamar · 607 33 32 13", "hero.eyebrow": "25 años · L'Estartit, Costa Brava", "hero.h1": "Instal·lacions Montgrí, 25 años a tu servicio.", "hero.lead": "Fontanería, electricidad, climatización y gas para viviendas y negocios de L'Estartit, Torroella de Montgrí y Pals.", "hero.badge1.title": "Urgencias 24h", "hero.badge1.desc": "Todo el año, también en temporada alta", "hero.badge2.title": "Torroella de Montgrí - L'Estartit", "hero.badge3.title": "Trabajo garantizado", "hero.badge3.desc": "Materiales de calidad y seguimiento", "services.tag": "Servicios", "services.h2": "Todo lo que necesita tu instalación, en un mismo equipo", "services.p": "Trabajamos tanto en averías puntuales como en proyectos completos, en primeras y segundas residencias, comunidades y locales comerciales.", "service1.title": "Fontanería", "service1.desc": "Reparación de fugas, grifería, tuberías, desatascos y mantenimiento de redes de agua.", "service2.title": "Electricidad", "service2.desc": "Instalaciones y cuadros eléctricos, iluminación, averías y boletines eléctricos oficiales.", "service3.title": "Climatización y calefacción", "service3.desc": "Instalación y mantenimiento de aire acondicionado, calderas y sistemas de calefacción.", "service4.title": "Instalaciones de gas", "service4.desc": "Instalación, revisión y certificado reglamentario de instalaciones de gas natural y butano.", "service5.title": "Reformas de baños y cocinas", "service5.desc": "Reformas integrales adaptadas a segundas residencias y apartamentos de la costa.", "service6.title": "Urgencias 24 horas", "service6.desc": "Atención rápida ante averías urgentes, cualquier día del año, en toda la zona de cobertura.", "why.tag": "Por qué elegirnos", "why.h2": "Conocemos cada rincón de la costa, y cada instalación es distinta", "why.p": "Llevamos años trabajando en la zona: sabemos qué exigen las viviendas frente al mar, las comunidades de vecinos y los negocios de temporada.", "why1.title": "Conocemos la costa", "why1.desc": "Años de experiencia en segundas residencias, apartamentos turísticos y viviendas de la zona.", "why2.title": "Trato claro y directo", "why2.desc": "Te explicamos el trabajo con detalle y sin tecnicismos innecesarios, de principio a fin.", "why3.title": "Profesionales autorizados", "why3.desc": "Instaladores cualificados y al día con la normativa vigente en cada sector.", "why4.title": "Respuesta ágil", "why4.desc": "Entendemos la urgencia de una avería, sobre todo en temporada alta.", "process.tag": "Cómo trabajamos", "process.h2": "Un proceso sencillo, de principio a fin", "process1.title": "Nos cuentas qué necesitas", "process1.desc": "Por teléfono, email o el formulario de contacto.", "process2.title": "Diagnóstico", "process2.desc": "Visita y valoración de la avería o instalación a realizar.", "process3.title": "Ejecutamos la instalación", "process3.desc": "Con materiales de calidad y cuidado por el detalle.", "process4.title": "Garantía y seguimiento", "process4.desc": "Respondemos por el trabajo realizado una vez finalizado.", "zona.tag": "Zona de cobertura", "zona.h2": "Trabajamos en el Baix Empordà", "opiniones.tag": "Opiniones", "opiniones.h2": "Lo que dicen quienes ya han confiado en nosotros", "opiniones.p": "Textos de ejemplo — a sustituir por opiniones reales de clientes.", "testi1": "\"Vinieron el mismo día por una fuga y explicaron todo antes de empezar. Muy formales.\"", "testi2": "\"Nos hicieron el cambio de caldera en el apartamento antes de la temporada. Puntuales y limpios.\"", "testi3": "\"Nos explicaron todo con claridad desde el principio, sin ninguna sorpresa al final. Repetiremos seguro.\"", "contacto.tag": "Contacto", "contacto.h2": "Cuéntanos qué necesitas, te respondemos rápido", "contacto.p": "Rellena el formulario o escríbenos directamente por email o teléfono.", "contacto.email.label": "Email", "contacto.telefono.label": "Teléfono", "contacto.zona.label": "Zona de trabajo", "contacto.horario.label": "Horario", "contacto.horario.value": "Lun–Vie 8:00–19:00 · Urgencias 24h", "form.nombre": "Nombre y apellidos", "form.telefono": "Teléfono", "form.email": "Email", "form.servicio": "Tipo de servicio", "form.opt.fontaneria": "Fontanería", "form.opt.electricidad": "Electricidad", "form.opt.climatizacion": "Climatización y calefacción", "form.opt.gas": "Gas", "form.opt.reformas": "Reformas", "form.opt.urgencia": "Urgencia", "form.opt.otro": "Otro", "form.mensaje": "Cuéntanos qué necesitas", "form.checkbox": "Acepto que Instal·lacions Montgrí trate mis datos para responder a esta solicitud.", "form.submit": "Enviar solicitud", "form.note": "También puedes escribirnos directamente a", "form.success": "Gracias, hemos recibido tu solicitud. Te responderemos lo antes posible.", "footer.tagline": "Fontanería, electricidad, climatización y gas en L'Estartit, Torroella de Montgrí y Pals.", "footer.nav.title": "Navegación", "footer.contact.title": "Contacto", "footer.copyright": "© 2026 Instal·lacions Montgrí. Todos los derechos reservados.", "footer.legal": "Aviso legal · Política de privacidad", "meta.title": "Instal·lacions Montgrí — Fontanería, electricidad y climatización en la Costa Brava", "meta.description": "Instal·lacions Montgrí: fontanería, electricidad, climatización, gas y reformas en L'Estartit, Torroella de Montgrí y Pals. 25 años a tu servicio. Contacta por teléfono o email.", "aria.cerrarMenu": "Cerrar menú"}, "ca": {"nav.servicios": "Serveis", "nav.porque": "Per què triar-nos", "nav.zona": "Zona de cobertura", "nav.opiniones": "Opinions", "nav.contacto": "Contacte", "nav.proceso": "Com treballem", "aria.abrirMenu": "Obre el menú", "aria.navPrincipal": "Navegació principal", "aria.navMobil": "Navegació mòbil", "mobile.llamar": "Truca · 607 33 32 13", "hero.eyebrow": "25 anys · l'Estartit, Costa Brava", "hero.h1": "Instal·lacions Montgrí, 25 anys al teu servei.", "hero.lead": "Fontaneria, electricitat, climatització i gas per a habitatges i negocis de l'Estartit, Torroella de Montgrí i Pals.", "hero.badge1.title": "Urgències 24h", "hero.badge1.desc": "Tot l'any, també en temporada alta", "hero.badge2.title": "Torroella de Montgrí - l'Estartit", "hero.badge3.title": "Treball garantit", "hero.badge3.desc": "Materials de qualitat i seguiment", "services.tag": "Serveis", "services.h2": "Tot el que necessita la teva instal·lació, en un mateix equip", "services.p": "Treballem tant en avaries puntuals com en projectes complets, en primeres i segones residències, comunitats i locals comercials.", "service1.title": "Fontaneria", "service1.desc": "Reparació de fuites, aixetes, canonades, desembussos i manteniment de xarxes d'aigua.", "service2.title": "Electricitat", "service2.desc": "Instal·lacions i quadres elèctrics, il·luminació, avaries i butlletins elèctrics oficials.", "service3.title": "Climatització i calefacció", "service3.desc": "Instal·lació i manteniment d'aire condicionat, calderes i sistemes de calefacció.", "service4.title": "Instal·lacions de gas", "service4.desc": "Instal·lació, revisió i certificat reglamentari d'instal·lacions de gas natural i butà.", "service5.title": "Reformes de banys i cuines", "service5.desc": "Reformes integrals adaptades a segones residències i apartaments de la costa.", "service6.title": "Urgències 24 hores", "service6.desc": "Atenció ràpida davant d'avaries urgents, qualsevol dia de l'any, a tota la zona de cobertura.", "why.tag": "Per què triar-nos", "why.h2": "Coneixem cada racó de la costa, i cada instal·lació és diferent", "why.p": "Portem anys treballant a la zona: sabem què exigeixen els habitatges davant del mar, les comunitats de veïns i els negocis de temporada.", "why1.title": "Coneixem la costa", "why1.desc": "Anys d'experiència en segones residències, apartaments turístics i habitatges de la zona.", "why2.title": "Tracte clar i directe", "why2.desc": "T'expliquem la feina amb detall i sense tecnicismes innecessaris, de principi a fi.", "why3.title": "Professionals autoritzats", "why3.desc": "Instal·ladors qualificats i al dia amb la normativa vigent a cada sector.", "why4.title": "Resposta àgil", "why4.desc": "Entenem la urgència d'una avaria, sobretot en temporada alta.", "process.tag": "Com treballem", "process.h2": "Un procés senzill, de principi a fi", "process1.title": "Ens expliques què necessites", "process1.desc": "Per telèfon, correu electrònic o el formulari de contacte.", "process2.title": "Diagnòstic", "process2.desc": "Visita i valoració de l'avaria o instal·lació a realitzar.", "process3.title": "Executem la instal·lació", "process3.desc": "Amb materials de qualitat i cura pel detall.", "process4.title": "Garantia i seguiment", "process4.desc": "Responem per la feina realitzada un cop finalitzada.", "zona.tag": "Zona de cobertura", "zona.h2": "Treballem al Baix Empordà", "opiniones.tag": "Opinions", "opiniones.h2": "El que diuen els qui ja han confiat en nosaltres", "opiniones.p": "Textos d'exemple — per substituir per opinions reals de clients.", "testi1": "\"Van venir el mateix dia per una fuita i ho van explicar tot abans de començar. Molt formals.\"", "testi2": "\"Ens van fer el canvi de caldera a l'apartament abans de la temporada. Puntuals i nets.\"", "testi3": "\"Ens ho van explicar tot amb claredat des del principi, sense cap sorpresa al final. Repetirem segur.\"", "contacto.tag": "Contacte", "contacto.h2": "Explica'ns què necessites, et responem ràpid", "contacto.p": "Omple el formulari o escriu-nos directament per correu electrònic o telèfon.", "contacto.email.label": "Correu electrònic", "contacto.telefono.label": "Telèfon", "contacto.zona.label": "Zona de treball", "contacto.horario.label": "Horari", "contacto.horario.value": "Dl–Dv 8:00–19:00 · Urgències 24h", "form.nombre": "Nom i cognoms", "form.telefono": "Telèfon", "form.email": "Correu electrònic", "form.servicio": "Tipus de servei", "form.opt.fontaneria": "Fontaneria", "form.opt.electricidad": "Electricitat", "form.opt.climatizacion": "Climatització i calefacció", "form.opt.gas": "Gas", "form.opt.reformas": "Reformes", "form.opt.urgencia": "Urgència", "form.opt.otro": "Altre", "form.mensaje": "Explica'ns què necessites", "form.checkbox": "Accepto que Instal·lacions Montgrí tracti les meves dades per respondre aquesta sol·licitud.", "form.submit": "Enviar sol·licitud", "form.note": "També ens pots escriure directament a", "form.success": "Gràcies, hem rebut la teva sol·licitud. Et respondrem al més aviat possible.", "footer.tagline": "Fontaneria, electricitat, climatització i gas a l'Estartit, Torroella de Montgrí i Pals.", "footer.nav.title": "Navegació", "footer.contact.title": "Contacte", "footer.copyright": "© 2026 Instal·lacions Montgrí. Tots els drets reservats.", "footer.legal": "Avís legal · Política de privacitat", "meta.title": "Instal·lacions Montgrí — Fontaneria, electricitat i climatització a la Costa Brava", "meta.description": "Instal·lacions Montgrí: fontaneria, electricitat, climatització, gas i reformes a l'Estartit, Torroella de Montgrí i Pals. 25 anys al teu servei. Contacta per telèfon o correu.", "aria.cerrarMenu": "Tanca el menú"}};
+  let currentLang = 'es';
+
+  function flagSVG(lang){
+    if (lang === 'ca') {
+      return '<svg class="flag-icon" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+        '<rect width="20" height="14" fill="#FCDD09"/>' +
+        '<rect y="1.55" width="20" height="1.56" fill="#DA121A"/>' +
+        '<rect y="4.67" width="20" height="1.56" fill="#DA121A"/>' +
+        '<rect y="7.78" width="20" height="1.56" fill="#DA121A"/>' +
+        '<rect y="10.9" width="20" height="1.56" fill="#DA121A"/>' +
+        '</svg>';
+    }
+    return '<svg class="flag-icon" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '<rect width="20" height="14" fill="#AA151B"/>' +
+      '<rect y="3.5" width="20" height="7" fill="#F1BF00"/>' +
+      '</svg>';
+  }
+
+  function setLangPillContent(){
+    const targetLang = currentLang === 'es' ? 'ca' : 'es';
+    const label = targetLang === 'ca' ? 'CA' : 'ES';
+    const html = flagSVG(targetLang) + '<span>' + label + '</span>';
+    document.querySelectorAll('.lang-pill').forEach(btn => { btn.innerHTML = html; });
+  }
+
+  function applyTranslations(lang){
+    const dict = I18N[lang];
+    if (!dict) return;
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+
+    document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+      el.getAttribute('data-i18n-attr').split(',').forEach(pair => {
+        const [attrName, key] = pair.split(':');
+        if (dict[key] !== undefined) el.setAttribute(attrName, dict[key]);
+      });
+    });
+
+    const titleEl = document.querySelector('title');
+    if (titleEl && dict['meta.title']) titleEl.textContent = dict['meta.title'];
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && dict['meta.description']) metaDesc.setAttribute('content', dict['meta.description']);
+
+    // keep hamburger aria-label in sync with current open/closed state
+    const isOpen = mobileNav.classList.contains('open');
+    hamburger.setAttribute('aria-label', isOpen ? dict['aria.cerrarMenu'] : dict['aria.abrirMenu']);
+
+    setLangPillContent();
+  }
+
+  document.querySelectorAll('.lang-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyTranslations(currentLang === 'es' ? 'ca' : 'es');
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  setLangPillContent();
+
   // Mobile nav toggle
   const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.getElementById('mobile-nav');
   hamburger.addEventListener('click', () => {
     const isOpen = mobileNav.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', String(isOpen));
-    hamburger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    hamburger.setAttribute('aria-label', isOpen ? I18N[currentLang]['aria.cerrarMenu'] : I18N[currentLang]['aria.abrirMenu']);
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
   mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
