@@ -113,7 +113,7 @@
   }
   .nav-inner{
     display:flex; align-items:center; justify-content:space-between;
-    min-height: 76px; padding: 14px 0; gap: 20px;
+    min-height: 76px; padding-top: 14px; padding-bottom: 14px; gap: 20px;
   }
   .nav-left{ display:flex; align-items:center; gap: 36px; min-width:0; }
   .brand{
@@ -226,16 +226,16 @@
   }
 
   @media (min-width: 960px){
-    .hero-split{ grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items:stretch; min-height: 560px; }
+    .hero-split{ grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items:stretch; min-height: 560px; max-width: 1680px; margin: 0 auto; }
     .hero-panel-light{
       display:flex; align-items:center;
-      padding: 72px 5vw 72px clamp(32px, calc((100vw - 1180px) / 2 + 32px), 140px);
+      padding: 72px 6vw;
     }
     .hero-panel-red{
       position:relative;
       padding: 0 4vw 56px;
     }
-    .hero-logo-full{ max-width: 460px; }
+    .hero-logo-full{ width: 68%; max-width: 480px; }
   }
 
     /* Battlement divider — echoes the castle silhouette from the logo */
@@ -375,7 +375,7 @@
 
   /* ---------- Footer ---------- */
   .site-footer{ background: var(--ink); color: rgba(255,255,255,0.75); padding-top:0; }
-  .footer-inner{ padding: 48px 0 32px; display:grid; gap:36px; grid-template-columns: 1fr; }
+  .footer-inner{ padding-top: 48px; padding-bottom: 32px; display:grid; gap:36px; grid-template-columns: 1fr; }
   @media (min-width: 760px){ .footer-inner{ grid-template-columns: 1.3fr 1fr 1fr; } }
   .footer-brand{ display:flex; align-items:center; gap:10px; color:var(--white); text-decoration:none; margin-bottom:14px; }
   .footer-brand .brand-mark{ width:30px; height:30px; }
@@ -387,7 +387,7 @@
   .footer-col a:hover{ color: var(--white); }
   .footer-bottom{
     border-top: 1px solid rgba(255,255,255,0.12);
-    padding: 20px 0 28px; font-size:0.8rem; color: rgba(255,255,255,0.5);
+    padding-top: 20px; padding-bottom: 28px; font-size:0.8rem; color: rgba(255,255,255,0.5);
     display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between;
   }
 
